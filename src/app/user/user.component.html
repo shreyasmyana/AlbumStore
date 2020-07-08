@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Album Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+<div class="container">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      
+        <div class="form-group">
+            <label for="artistName">Artist Name</label>
+            <input type="text" class="form-control" id="artistName" name="artistName" aria-describedby="emailHelp" placeholder="Enter Artist Name" ngModel >
+            
+          </div>
+
+          <div class="form-group">
+            <label for="albumName">Album Name</label>
+            <input type="text" class="form-control" id="albumName" name="albumName" aria-describedby="emailHelp" placeholder="Enter Album Name" ngModel>
+            
+          </div>
+          
+          <div class="form-group">
+            <label for="albumCover">Upload Album Cover</label>
+            <input type="file" class="form-control" id="albumCover" name="image" multiple (change)='selectImage($event)'ngModel/>
+            <button type="button" (click)="onUpload()">Upload</button>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="trackno" name="trackno" [(ngModel)]="trackno" (change)="generatetracks()">
+          </div>
+          <div class="form-group" *ngIf="trackno > 0">
+            <div *ngFor="track of displayfields; let indexof = index" class="form-group" >
+               <label id="tracknumber" name="tracknumber">Track Number:{{indexof}} </label> 
+              <label for="trackname">Track Name: </label><input class="form-control" id="trackname{{indexof}}" name="trackname"  type="text" ngModel >
+              <label for="trackprice">Track Price: </label><input class="form-control" id="trackprice{{indexof}}" name="trackprice"  type="text" ngModel >
+            </div>
+
+          </div>
+          
+          
+          <div class="form-group">
+            <button type="submit">Submit</button>
+          </div>
+</form>
+</div>

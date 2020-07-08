@@ -1,0 +1,12 @@
+.flex-container{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.table{
+    width: 500px;
+    align-content: center;
+    margin:0 auto;
+}

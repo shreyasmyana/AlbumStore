@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Album Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    
+  </div>
+</nav> 
+
+<div class="container-flex">
+<h2>Login Page</h2>
+</div>
+
+<div class="d-flex justify-content-center">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" 
+        aria-describedby="emailHelp" name="emailId" ngModel required email #emailId="ngModel">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div class="text-danger" *ngIf="!emailId.valid && emailId.touched">Please enter correct email ID</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">LogIn</button>
+    
+  </form>
+</div>
+
+<div class="container-flex" style="text-align: center;">
+<a href="register">Click Here</a> to SignUP
+</div>

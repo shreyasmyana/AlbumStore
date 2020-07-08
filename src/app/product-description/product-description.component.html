@@ -1,0 +1,42 @@
+
+    <div class="flex-container">
+      <img src={{albums.album.albumCover}} style="width: 300px;height: 200px;"/>  
+    </div>
+    <div class="table-responsive">
+      <table class='table'>
+        <tr>
+          <td>Album Name: </td>
+          <td>{{albums.album.name}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Artist Name: </td>
+          <td>{{albums.artist}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tracks:</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <thead class='thead-dark'>
+        <tr>
+          <th>Number</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+        <tr *ngFor='let track of albums.album.tracks'>
+
+          <td>{{track.trackNumber}}</td>
+          <td >{{track.trackName}}</td>
+          <td>{{track.trackPrice}}</td> 
+          
+        </tr>
+      </table>
+    </div>
+    
+
+
+
+  
